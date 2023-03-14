@@ -12,7 +12,7 @@ pkg_check_modules(LIBUSB REQUIRED libusb-1.0)
 link_directories(${SDL2_LIBRARY_DIRS} ${LIBUSB_LIBRARY_DIRS})
 add_compile_definitions(USE_LIBUSB)
 
-add_executable(${APP_NAME} main.c audio.c)
+add_executable(${APP_NAME} main.c libmaru.c fifo.h fifo.c)
 
 target_link_libraries(${APP_NAME} ${SDL2_LIBRARIES} ${LIBUSB_LIBRARIES})
 target_include_directories(${APP_NAME} PUBLIC ${SDL2_INCLUDE_DIRS} ${LIBUSB_INCLUDE_DIRS})
